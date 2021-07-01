@@ -1,20 +1,16 @@
 package hello.LearningSpringbootbyCode.service;
 
 import hello.LearningSpringbootbyCode.domain.Member;
-import hello.LearningSpringbootbyCode.repository.MemberRepository;
 import hello.LearningSpringbootbyCode.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService = new MemberService(memberRepository);
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
 
     @AfterEach
